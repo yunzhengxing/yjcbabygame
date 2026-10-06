@@ -40,3 +40,7 @@
 
 详细规则见 `games/age-2-3/README.md`。
 
+## 本地试玩原型
+
+- 《颜色小侦探》：打开 `games/color-detective/index.html` 即可试玩。
+- 当前开发内容仅保存在本地，待家长试玩确认后再推送。

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#8bd5ff">
+  <title>颜色小侦探</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell" aria-live="polite">
+    <section class="screen start-screen is-active" id="start-screen">
+      <div class="sky-decor" aria-hidden="true">
+        <span class="sun"></span>
+        <span class="mini-cloud cloud-one"></span>
+        <span class="mini-cloud cloud-two"></span>
+      </div>
+
+      <div class="hero-cloud" aria-hidden="true">
+        <span class="cloud-face">
+          <span class="eye eye-left"></span>
+          <span class="eye eye-right"></span>
+          <span class="smile"></span>
+        </span>
+      </div>
+
+      <p class="eyebrow">云朵村 · 第一个小游戏 <span class="version-badge">V2</span></p>
+      <h1>颜色小侦探</h1>
+      <p class="intro">听一听，找一找，点中云朵说的颜色。</p>
+
+      <div class="level-picker" aria-label="选择游戏等级">
+        <p class="level-picker-title">选择今天的难度</p>
+        <div class="level-options" role="group" aria-label="游戏难度">
+          <button class="level-button is-selected" data-level="sprout" type="button" aria-pressed="true">
+            <span class="level-number">1</span>
+            <span><strong>彩虹芽</strong><small>2 个颜色 · 3 轮</small></span>
+          </button>
+          <button class="level-button" data-level="detective" type="button" aria-pressed="false">
+            <span class="level-number">2</span>
+            <span><strong>云朵侦探</strong><small>3 个颜色 · 5 轮</small></span>
+          </button>
+          <button class="level-button" data-level="master" type="button" aria-pressed="false">
+            <span class="level-number">3</span>
+            <span><strong>彩虹高手</strong><small>4 个颜色 · 6 轮</small></span>
+          </button>
+        </div>
+      </div>
+
+      <button class="primary-button" id="start-button" type="button">
+        <span aria-hidden="true">🔍</span>
+        <span id="start-label">开始：彩虹芽</span>
+      </button>
+
+      <button class="sound-button" id="sound-button" type="button" aria-pressed="true">
+        <span id="sound-icon" aria-hidden="true">🔊</span>
+        <span id="sound-label">声音已开启</span>
+      </button>
+
+      <p class="parent-note">给家长：每局约 2 分钟，不计时、不扣分。</p>
+    </section>
+
+    <section class="screen play-screen" id="play-screen">
+      <header class="play-header">
+        <button class="icon-button" id="home-button" type="button" aria-label="回到开始页">⌂</button>
+        <div class="play-status">
+          <span class="current-level" id="current-level">等级 1 · 彩虹芽</span>
+          <div class="progress" id="progress" aria-label="游戏进度"></div>
+        </div>
+        <button class="icon-button" id="repeat-button" type="button" aria-label="再听一次">🔊</button>
+      </header>
+
+      <div class="guide-row">
+        <div class="small-cloud" id="guide-cloud" aria-hidden="true">
+          <span class="small-eye left"></span>
+          <span class="small-eye right"></span>
+          <span class="small-smile"></span>
+        </div>
+        <div class="speech-bubble">
+          <p id="prompt-lead">请找一找</p>
+          <strong id="target-name">黄色</strong>
+        </div>
+      </div>
+
+      <div class="color-grid" id="color-grid" aria-label="颜色选项"></div>
+
+      <p class="gentle-hint" id="gentle-hint">点一点你找到的颜色</p>
+    </section>
+
+    <section class="screen finish-screen" id="finish-screen">
+      <div class="celebration" id="celebration" aria-hidden="true"></div>
+      <div class="hero-cloud happy-cloud" aria-hidden="true">
+        <span class="cloud-face">
+          <span class="eye eye-left happy-eye"></span>
+          <span class="eye eye-right happy-eye"></span>
+          <span class="smile big-smile"></span>
+        </span>
+      </div>
+      <p class="eyebrow" id="finish-eyebrow">今天的发现完成啦</p>
+      <h2 id="finish-title">你找到好多颜色！</h2>
+      <p class="intro" id="finish-message">云朵伙伴把一颗彩虹星星送给你。</p>
+      <div class="earned-stars" id="earned-stars" aria-label="获得的星星"></div>
+      <button class="primary-button" id="again-button" type="button">再玩一次</button>
+      <button class="secondary-button" id="finish-home-button" type="button">休息一下</button>
+    </section>
+  </main>
+
+  <script src="game-core.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
